@@ -16,7 +16,7 @@ and following ints. I.E: [5,7,7,6,2] the sequence of 2 7s is a peak.`
 and following ints. I.E: [5,3,2,2,5] the sequence of 2 2s is a valley.`
 
 #### How to use:
-From command line call:
+From command line within the file path call:
 
 `$ python3 castle.py`
 

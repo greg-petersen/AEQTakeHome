@@ -17,29 +17,20 @@ class Transformer:
     def fight(self, opponent):
         winner = None
 
-        # if self.name == 'Optimus Prime' or self.name == 'Predaking':
-        #     winner = self
-        # elif opponent.name == 'Optimus Prime' or opponent.name == 'Predaking':
-        #     winner = opponent
-        if self.courage - opponent.courage >= 4 and self.strength - opponent.strength >= 3:
+        if (self.name == 'Optimus Prime' or self.name == 'Predaking') and \
+            (opponent.name == 'Optimus Prime' or opponent.name == 'Predaking'):
+            winner = 'NO ONE'
+        elif self.name == 'Optimus Prime' or self.name == 'Predaking':
             winner = self
-        elif self.strength - opponent.strength >= 3 or \
-                self.intelligence - opponent.intelligence >= 3 or \
-                self.speed - opponent.speed >= 3 or \
-                self.endurance - opponent.endurance >= 3 or \
-                self.rank - opponent.rank >= 3 or \
-                self.courage - opponent.courage >= 3 or \
-                self.firepower - opponent.firepower >= 3 or \
-                self.skill - opponent.skill >= 3:
+        elif opponent.name == 'Optimus Prime' or opponent.name == 'Predaking':
+            winner = opponent
+        elif self.courage - opponent.courage >= 4 and self.strength - opponent.strength >= 3:
             winner = self
-        elif self.strength - opponent.strength <= -3 or \
-                self.intelligence - opponent.intelligence <= -3 or \
-                self.speed - opponent.speed <= -3 or \
-                self.endurance - opponent.endurance <= -3 or \
-                self.rank - opponent.rank <= -3 or \
-                self.courage - opponent.courage <= -3 or \
-                self.firepower - opponent.firepower <= -3 or \
-                self.skill - opponent.skill <= -3:
+        elif opponent.courage - self.courage >= 4 and opponent.strength - self.strength >= 3:
+            winner = opponent
+        elif self.skill - opponent.skill >= 3:
+            winner = self
+        elif opponent.skill - self.skill >= 3:
             winner = opponent
         elif self.rating > opponent.rating:
             winner = self
@@ -47,5 +38,12 @@ class Transformer:
             winner = opponent
         else:
             winner = 'Tie'
-        # If winner = None, this means a tie occurred.
+            self.alive = False
+            opponent.alive = False
+
+        if winner == self:
+            opponent.alive = False
+        elif winner == opponent:
+            self.alive = False
+
         return winner

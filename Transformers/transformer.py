@@ -1,6 +1,6 @@
 class Transformer:
-
     def __init__(self, name, allegiance, strength, intelligence, speed, endurance, rank, courage, firepower, skill):
+        """Initialization function for a Transformer."""
         self.name = name
         self.allegiance = allegiance
         self.strength = strength
@@ -15,11 +15,12 @@ class Transformer:
         self.alive = True
 
     def fight(self, opponent):
+        """Determines, between two transformers, who is the winner based on the following conditions."""
         winner = None
 
         if (self.name == 'Optimus Prime' or self.name == 'Predaking') and \
             (opponent.name == 'Optimus Prime' or opponent.name == 'Predaking'):
-            winner = 'NO ONE'
+            winner = 'Optoking'
         elif self.name == 'Optimus Prime' or self.name == 'Predaking':
             winner = self
         elif opponent.name == 'Optimus Prime' or opponent.name == 'Predaking':

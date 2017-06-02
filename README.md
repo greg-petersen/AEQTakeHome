@@ -4,7 +4,7 @@
 
 ### castle.py
 
-The castle.py has a function that accepts an input array of integers from which
+The `castle.py` has a function that accepts an input array of integers from which
 it determines how many castles should be built based on the following criteria:
 
 `A castle will only be built in a valley or on a peak.`
@@ -16,7 +16,7 @@ and following ints. I.E: [5,7,7,6,2] the sequence of 2 7s is a peak.`
 and following ints. I.E: [5,3,2,2,5] the sequence of 2 2s is a valley.`
 
 #### How to use:
-From command line within the file path call:
+From command line within the Castles directory call:
 
 `$ python3 castle.py`
 
@@ -25,7 +25,24 @@ The input array can be changed inside of the file to be a specific input array,
 
 ## Part 2: The Transformation Company
 
-TBD.
+The `run.py` and `transformer.py` files are used in conjuction to determine whether the autobots
+or decepticons, from an input array, are the victors after a series of battles.
+
+The victor of each battle is determine by comparing the battling transformers' stats.
+
+The `transformer.py` file holds the class definition for a transformer. This class
+definition contains name, allegiance, strength, intelligence, speed, endurance, rank,
+courage, firepower, skill, calculated rating, and whether they are alive, for each
+transformer.
+
+#### How to use:
+From command line within the Transfomers directory call:
+
+`$ python3 run.py`
+
+The input array can be changed inside of the `run.py` file to add or remove
+autobots and decepticons for the battles to come.
+
 
 ## License
 

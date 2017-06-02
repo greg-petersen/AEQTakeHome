@@ -66,7 +66,7 @@ def make_string_of_losing_team_survivors(team_list, team):
     """Returns the string of the survivors in the received team_list."""
     survivors = 'Survivors from the losing team(' + team + '): '
 
-    for idx, member in enumerate(team_list):
+    for member in team_list:
         if member.alive:
             survivors += '%s ' % member.name
 
